@@ -21,13 +21,27 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 
 ## Features
 
-* Correct `boolean` form type for RESTful API context.
+* Improved `BooleanType` for forms which are used in the RESTful context.
 
 ## Installation
 
 ### Install via Composer
 
 ```php composer.phar require fresh/common-api-bundle='~1.0'```
+
+### Register the bundle
+
+To start using the bundle, register it in `app/AppKernel.php`:
+
+```php
+public function registerBundles()
+{
+    $bundles = [
+        // Other bundles...
+        new Fresh\CommonApiBundle\FreshCommonApiBundle(),
+    ];
+}
+```
 
 ## Using
 
@@ -59,10 +73,31 @@ On practise some clients don't send only `true` and `false` values. Some clients
 ```
 
 If you are using standard built-in [Symfony CheckboxType](http://symfony.com/doc/current/reference/forms/types/checkbox.html),
-then some of these values can be treated as `true`. Because in the context of web form if checkbox has non-empty value then it treated as checked.
+then some of these values can be treated as `true`. Because in the context of web form, if checkbox has non-empty value, then it treated as checked.
+Custom [BooleanType](https://github.com/fre5h/CommonApiBundle/blob/master/Form/Type/BooleanType.php) fixes this problem.
 
-This form type is useful only if you are using `Symfony Form Component` in your application.
-If you don't use *Symfony forms* for building your RESTful web service, then this form type will be useless.
+```php
+namespace AcmeBundle\Form\Type;
+
+use Fresh\CommonApiBundle\Form\Type\BooleanType;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class SettingsType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('email_notifications', BooleanType::class)
+            ->add('sms_notifications', BooleanType::class);
+    }
+}
+
+```
+
+But this form type is useful only if you are using **Symfony Form Component** in your application.
+If you don't use *Symfony forms* for building your RESTful web service, then this form type will be useless for you.
 
 ## Contributing
 
