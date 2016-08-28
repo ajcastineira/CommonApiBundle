@@ -1,0 +1,8 @@
+parameters:
+    form.type.boolean.class: Fresh\CommonApiBundle\Form\Type\BooleanType
+
+services:
+    form.type.boolean:
+        class: "%form.type.boolean.class%"
+        tags:
+            - { name: form.type }

@@ -1,0 +1,40 @@
+{
+    "name": "fresh/common-api-bundle",
+    "description": "Provides some missing out-of-box features for RESTful API services based on Symfony.",
+    "keywords": ["bundle", "symfony", "api", "boolean"],
+    "homepage": "https://github.com/fre5h/CommonApiBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Artem Genvald",
+            "email": "genvaldartem@gmail.com",
+            "role": "Creator"
+        }
+    ],
+    "support": {
+        "email": "genvaldartem@gmail.com",
+        "issues": "https://github.com/fre5h/CommonApiBundle/issues"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/config": "~2.8|~3.0",
+        "symfony/form": "~2.8|~3.0",
+        "symfony/framework-bundle": "~2.8|~3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "squizlabs/php_codesniffer": "~2.6",
+        "escapestudios/symfony2-coding-standard": "~2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fresh\\CommonApiBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
