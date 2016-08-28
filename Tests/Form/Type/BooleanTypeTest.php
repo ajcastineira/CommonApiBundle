@@ -22,11 +22,6 @@ use Symfony\Component\Form\Test\FormIntegrationTestCase;
  */
 class BooleanTypeTest extends FormIntegrationTestCase
 {
-    public function testGetName()
-    {
-        $this->assertEquals(BooleanType::class, (new BooleanType())->getName());
-    }
-
     public function testGetParent()
     {
         $this->assertEquals(TextType::class, (new BooleanType())->getParent());
