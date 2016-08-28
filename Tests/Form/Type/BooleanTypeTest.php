@@ -10,6 +10,7 @@
 
 namespace Fresh\CommonApiBundle\Tests\Form\Type;
 
+use Fresh\CommonApiBundle\Form\DataTransformer\BooleanDataTransformer;
 use Fresh\CommonApiBundle\Form\Type\BooleanType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\PreloadedExtension;
@@ -27,6 +28,13 @@ class BooleanTypeTest extends FormIntegrationTestCase
         $this->assertEquals(TextType::class, (new BooleanType())->getParent());
     }
 
+    public function testFormBuilder()
+    {
+        $form = $this->factory->createBuilder(BooleanType::class)->getForm();
+        $this->assertCount(1, $form->getConfig()->getViewTransformers());
+        $this->assertInstanceOf(BooleanDataTransformer::class, $form->getConfig()->getViewTransformers()[0]);
+    }
+
     protected function getTestedType()
     {
         return BooleanType::class;
@@ -37,10 +45,7 @@ class BooleanTypeTest extends FormIntegrationTestCase
         $booleanType = new BooleanType();
 
         return [
-            new PreloadedExtension(
-                [BooleanType::class => $booleanType],
-                []
-            ),
+            new PreloadedExtension([BooleanType::class => $booleanType], []),
         ];
     }
 }
