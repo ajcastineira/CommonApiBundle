@@ -8,7 +8,7 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 [![License](https://img.shields.io/packagist/l/fresh/common-api-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/common-api-bundle)
 [![Latest Stable Version](https://img.shields.io/packagist/v/fresh/common-api-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/common-api-bundle)
 [![Total Downloads](https://img.shields.io/packagist/dt/fresh/common-api-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/common-api-bundle)
-[![Dependency Status](https://img.shields.io/versioneye/d/php/fresh:common-api-bundle.svg?style=flat-square)](https://www.versioneye.com/user/projects/57c2e80e69d94900419c9ec3)
+[![Dependency Status](https://www.versioneye.com/user/projects/57c2e80e69d94900419c9ec3/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/57c2e80e69d94900419c9ec3)
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/8da90969-be40-4f0b-812c-435fbca7ce16.svg?style=flat-square)](https://insight.sensiolabs.com/projects/8da90969-be40-4f0b-812c-435fbca7ce16)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat-square)](https://gitter.im/fre5h/CommonApiBundle)
 
@@ -82,7 +82,6 @@ namespace AcmeBundle\Form\Type;
 use Fresh\CommonApiBundle\Form\Type\BooleanType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SettingsType extends AbstractType
 {
