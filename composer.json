@@ -30,7 +30,10 @@
     "autoload": {
         "psr-4": {
             "Fresh\\CommonApiBundle\\": ""
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "extra": {
         "branch-alias": {
