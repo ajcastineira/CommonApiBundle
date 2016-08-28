@@ -12,7 +12,7 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 [![SensioLabsInsight](https://img.shields.io/sensiolabs/i/8da90969-be40-4f0b-812c-435fbca7ce16.svg?style=flat-square)](https://insight.sensiolabs.com/projects/8da90969-be40-4f0b-812c-435fbca7ce16)
 [![Gitter](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg?style=flat-square)](https://gitter.im/fre5h/CommonApiBundle)
 
-[![knpbundles.com](http://knpbundles.com/fre5h/CommonApiEnumBundle/badge-short)](http://knpbundles.com/fre5h/CommonApiEnumBundle)
+[![knpbundles.com](http://knpbundles.com/fre5h/CommonApiBundle/badge-short)](http://knpbundles.com/fre5h/CommonApiBundle)
 
 ## Requirements
 
