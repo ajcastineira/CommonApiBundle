@@ -48,6 +48,9 @@ public function registerBundles()
 
 ### BooleanType
 
+> NOTE. This form type is useful only if you are using **Symfony Form Component** in your application.
+If you don't use *Symfony forms* for building your RESTful web service, then this form type will be useless for you.
+
 Suppose that you have `Settings` entity which stores information about type of notifications which should be enabled.
 Then PUT method of your API could receive something like this `json` body.
 
@@ -95,9 +98,6 @@ class SettingsType extends AbstractType
 }
 
 ```
-
-But this form type is useful only if you are using **Symfony Form Component** in your application.
-If you don't use *Symfony forms* for building your RESTful web service, then this form type will be useless for you.
 
 ## Contributing
 
