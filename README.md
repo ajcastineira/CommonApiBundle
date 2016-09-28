@@ -24,6 +24,8 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 
 * Improved `BooleanType` for forms which are used in the RESTful context.
 * `ServerInternalErrorException` if you need to return a response with a 500 HTTP status code.
+* `DateFormatHelper` has date format for `Last-Modified-At` HTTP header.
+* `ExceptionHelperTrait` shortcut methods to throw some frequently used exceptions in controllers.
 
 ## Installation
 
