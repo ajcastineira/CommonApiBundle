@@ -26,6 +26,7 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 * `ServerInternalErrorException` if you need to return a response with a 500 HTTP status code.
 * `DateFormatHelper` has date format for `Last-Modified` HTTP header.
 * `ExceptionHelperTrait` shortcut methods to throw some frequently used exceptions in controllers.
+* `RollbarHelperTrait` and `SentryHelperTrait` for loggin exception and messages.
 
 ## Installation
 
