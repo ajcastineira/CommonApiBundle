@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Fresh\CommonApiBundle\Exception;
+namespace Fresh\CommonApiBundle\Helper;
 
 /**
  * DateFormatHelper.
