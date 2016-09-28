@@ -4,7 +4,6 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 
 [![Scrutinizer Quality Score](https://img.shields.io/scrutinizer/g/fre5h/CommonApiBundle.svg?style=flat-square)](https://scrutinizer-ci.com/g/fre5h/CommonApiBundle/)
 [![Build Status](https://img.shields.io/travis/fre5h/CommonApiBundle.svg?style=flat-square)](https://travis-ci.org/fre5h/CommonApiBundle)
-[![CodeCov](https://codecov.io/gh/fre5h/CommonApiBundle/branch/master/graph/badge.svg)](https://codecov.io/gh/fre5h/CommonApiBundle)
 [![CodeCov](https://img.shields.io/codecov/c/github/fre5h/CommonApiBundle.svg?style=flat-square)](https://codecov.io/github/fre5h/CommonApiBundle)
 [![License](https://img.shields.io/packagist/l/fresh/common-api-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/common-api-bundle)
 [![Latest Stable Version](https://img.shields.io/packagist/v/fresh/common-api-bundle.svg?style=flat-square)](https://packagist.org/packages/fresh/common-api-bundle)
