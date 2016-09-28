@@ -17,7 +17,7 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 
 ## Requirements
 
-* PHP 5.5.9 *and later*
+* PHP 5.6.0 *and later*
 * Symfony 2.8.6 *and later*
 
 ## Features
