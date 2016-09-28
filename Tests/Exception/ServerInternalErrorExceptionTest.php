@@ -22,6 +22,6 @@ class ServerInternalErrorExceptionTest extends \PHPUnit_Framework_TestCase
     public function testCreation()
     {
         $exception = new ServerInternalErrorException();
-        $this->assertEquals(500, $exception->getCode());
+        $this->assertEquals(500, $exception->getStatusCode());
     }
 }
