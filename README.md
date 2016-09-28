@@ -23,6 +23,7 @@ Provides some missing out-of-box features for RESTful API services based on Symf
 ## Features
 
 * Improved `BooleanType` for forms which are used in the RESTful context.
+* `ServerInternalErrorException` if you need to return a response with a 500 HTTP status code.
 
 ## Installation
 
@@ -63,7 +64,7 @@ Then PUT method of your API could receive something like this `json` body.
 }
 ```
 
-On practise some clients don't send only `true` and `false` values. Some clients can send values like this: 
+On practise some clients don't send only `true` and `false` values. Some clients can send values like this:
 
 ```json
 {
