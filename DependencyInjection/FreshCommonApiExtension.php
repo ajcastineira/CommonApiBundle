@@ -39,7 +39,7 @@ class FreshCommonApiExtension extends Extension
             $definition = new Definition(JsonDecoderListener::class);
             $definition->addTag('kernel.event_listener', [
                 'event'  => 'kernel.request',
-                'method' => 'onKernelRequest'
+                'method' => 'onKernelRequest',
             ]);
             $container->setDefinition('fresh_common_api.listener.json_decoder', $definition);
         }
