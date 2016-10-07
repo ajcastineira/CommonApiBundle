@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is part of the FreshSinchBundle
+ * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
  *
@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Fresh\CommonApiBundle\Tests\FreshCommonApiBundle;
+namespace Fresh\CommonApiBundle\Tests\DependencyInjection;
 
 use Fresh\CommonApiBundle\DependencyInjection\Configuration;
 use Matthias\SymfonyConfigTest\PhpUnit\ConfigurationTestCaseTrait;

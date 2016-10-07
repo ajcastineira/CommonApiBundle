@@ -1,7 +1,7 @@
 {
     "name": "fresh/common-api-bundle",
     "description": "Provides some missing out-of-box features for RESTful API services based on Symfony.",
-    "keywords": ["bundle", "symfony", "api", "boolean"],
+    "keywords": ["bundle", "symfony", "api", "boolean", "json decoder"],
     "homepage": "https://github.com/fre5h/CommonApiBundle",
     "type": "symfony-bundle",
     "license": "MIT",
@@ -26,7 +26,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~5.5",
-        "matthiasnoback/symfony-config-test": "1.4.*",
+        "matthiasnoback/symfony-config-test": "2.0.*",
         "squizlabs/php_codesniffer": "~2.7",
         "escapestudios/symfony2-coding-standard": "~2.9"
     },
