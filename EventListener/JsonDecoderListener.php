@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 class JsonDecoderListener
 {
     /**
-     * @var array $jsonContentTypes JSON content types
+     * @var array
      */
     private $jsonContentTypes = [
         'application/json',

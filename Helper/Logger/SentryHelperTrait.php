@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -20,9 +20,7 @@ trait SentryHelperTrait
     use BaseLoggerTrait;
 
     /**
-     * Send exception to Sentry.
-     *
-     * @param \Exception $e Exception
+     * @param \Exception $e
      */
     protected function sendExceptionToSentry(\Exception $e)
     {
@@ -34,8 +32,6 @@ trait SentryHelperTrait
     }
 
     /**
-     * Send message to Sentry.
-     *
      * @param string $message Message
      * @param string $level   Level
      */

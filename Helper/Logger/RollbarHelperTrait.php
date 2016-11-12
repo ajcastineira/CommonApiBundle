@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -20,9 +20,7 @@ trait RollbarHelperTrait
     use BaseLoggerTrait;
 
     /**
-     * Send exception to Rollbar.
-     *
-     * @param \Exception $e Exception
+     * @param \Exception $e
      */
     protected function sendExceptionToRollbar(\Exception $e)
     {
@@ -34,8 +32,6 @@ trait RollbarHelperTrait
     }
 
     /**
-     * Send message to Rollbar.
-     *
      * @param string $message Message
      * @param string $level   Level
      */

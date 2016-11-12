@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -18,20 +18,16 @@ namespace Fresh\CommonApiBundle\Helper\Logger;
 trait BaseLoggerTrait
 {
     /**
-     * Returns true if the service ID is defined.
+     * @param string $id
      *
-     * @param string $id Service ID
-     *
-     * @return bool True if the service id is defined, false otherwise.
+     * @return bool
      */
     abstract public function has($id);
 
     /**
-     * Gets a container service by its ID.
+     * @param string $id
      *
-     * @param string $id Service ID
-     *
-     * @return object The service.
+     * @return object
      */
     abstract public function get($id);
 }

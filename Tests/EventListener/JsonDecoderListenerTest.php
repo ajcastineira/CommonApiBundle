@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -32,7 +32,7 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
     private $dispatcher;
 
     /**
-     * @var
+     * @var HttpKernelInterface|\PHPUnit_Framework_MockObject_MockObject $kernel kernel
      */
     private $kernel;
 
@@ -58,7 +58,7 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
     {
         $this->addEventListener();
 
-        /** @var Request $request */
+        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
         $request = $this->getMockBuilder(Request::class)
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -84,7 +84,7 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
     {
         $this->addEventListener();
 
-        /** @var Request $request */
+        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
         $request = $this->getMockBuilder(Request::class)
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -103,7 +103,7 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
     {
         $this->addEventListener();
 
-        /** @var Request $request */
+        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
         $request = $this->getMockBuilder(Request::class)
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -126,7 +126,7 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
     {
         $this->addEventListener();
 
-        /** @var Request $request */
+        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
         $request = $this->getMockBuilder(Request::class)
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -145,7 +145,6 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
 }
 JSON
                 );
-
 
         $event = new GetResponseEvent($this->kernel, $request, HttpKernelInterface::MASTER_REQUEST);
         $this->dispatcher->dispatch(KernelEvents::REQUEST, $event);

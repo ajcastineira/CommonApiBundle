@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -24,7 +24,7 @@ class BooleanDataTransformer implements DataTransformerInterface
      */
     public function transform($value)
     {
-        return null;
+        return;
     }
 
     /**

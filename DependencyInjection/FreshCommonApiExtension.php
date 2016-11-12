@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * This file is part of the FreshCommonApiBundle
  *
  * (c) Artem Genvald <genvaldartem@gmail.com>
@@ -38,7 +38,7 @@ class FreshCommonApiExtension extends Extension
         if (true === $config['enable_json_decoder']) {
             $definition = new Definition(JsonDecoderListener::class);
             $definition->addTag('kernel.event_listener', [
-                'event'  => 'kernel.request',
+                'event' => 'kernel.request',
                 'method' => 'onKernelRequest',
             ]);
             $container->setDefinition('fresh_common_api.listener.json_decoder', $definition);
