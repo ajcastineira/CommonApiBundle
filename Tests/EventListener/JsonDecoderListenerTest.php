@@ -37,6 +37,11 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
     private $kernel;
 
     /**
+     * @var Request|\PHPUnit_Framework_MockObject_MockObject
+     */
+    private $request;
+
+    /**
      * {@inheritdoc}
      */
     protected function setUp()
@@ -44,6 +49,10 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
         $this->kernel = $this->getMockBuilder(HttpKernelInterface::class)
                              ->disableOriginalConstructor()
                              ->getMock();
+
+        $this->request = $this->getMockBuilder(Request::class)
+                              ->disableOriginalConstructor()
+                              ->getMock();
     }
 
     /**
@@ -51,17 +60,13 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
      */
     protected function tearDown()
     {
-        $this->dispatcher = null;
+        unset($this->dispatcher);
+        unset($this->request);
     }
 
     public function testIgnoreDecodingWithoutContentTypeHeader()
     {
         $this->addEventListener();
-
-        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
-        $request = $this->getMockBuilder(Request::class)
-                        ->disableOriginalConstructor()
-                        ->getMock();
 
         $headerBag = $this->getMockBuilder(HeaderBag::class)
                           ->disableOriginalConstructor()
@@ -72,81 +77,66 @@ class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
                   ->withAnyParameters()
                   ->willReturn(false);
 
-        $request->headers = $headerBag;
+        $this->request->headers = $headerBag;
 
-        $event = new GetResponseEvent($this->kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new GetResponseEvent($this->kernel, $this->request, HttpKernelInterface::MASTER_REQUEST);
         $this->dispatcher->dispatch(KernelEvents::REQUEST, $event);
 
-        $this->assertNull($request->request);
+        $this->assertNull($this->request->request);
     }
 
     public function testIgnoreDecodingWithNotJsonContentType()
     {
         $this->addEventListener();
 
-        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
-        $request = $this->getMockBuilder(Request::class)
-                        ->disableOriginalConstructor()
-                        ->getMock();
-
         $headerBag = new HeaderBag();
         $headerBag->add(['Content-Type' => 'text/html']);
-        $request->headers = $headerBag;
+        $this->request->headers = $headerBag;
 
-        $event = new GetResponseEvent($this->kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new GetResponseEvent($this->kernel, $this->request, HttpKernelInterface::MASTER_REQUEST);
         $this->dispatcher->dispatch(KernelEvents::REQUEST, $event);
 
-        $this->assertNull($request->request);
+        $this->assertNull($this->request->request);
     }
 
     public function testIgnoreDecodingIfDataCannotBeDecodedFromJson()
     {
         $this->addEventListener();
 
-        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
-        $request = $this->getMockBuilder(Request::class)
-                        ->disableOriginalConstructor()
-                        ->getMock();
-
         $headerBag = new HeaderBag();
         $headerBag->add(['Content-Type' => 'application/json']);
-        $request->headers = $headerBag;
+        $this->request->headers = $headerBag;
 
-        $request->expects($this->once())
-                ->method('getContent')
-                ->willReturn('hello world'); // simple test cannot be treated as json
+        $this->request->expects($this->once())
+                      ->method('getContent')
+                      ->willReturn('hello world'); // simple test cannot be treated as json
 
-        $event = new GetResponseEvent($this->kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new GetResponseEvent($this->kernel, $this->request, HttpKernelInterface::MASTER_REQUEST);
         $this->dispatcher->dispatch(KernelEvents::REQUEST, $event);
 
-        $this->assertNull($request->request);
+        $this->assertNull($this->request->request);
     }
 
     public function testSuccessfulDecodingJsonRequest()
     {
         $this->addEventListener();
 
-        /** @var Request|\PHPUnit_Framework_MockObject_MockObject $request */
-        $request = $this->getMockBuilder(Request::class)
-                        ->disableOriginalConstructor()
-                        ->getMock();
-
         $headerBag = new HeaderBag();
         $headerBag->add(['Content-Type' => 'application/json']);
-        $request->headers = $headerBag;
+        $this->request->headers = $headerBag;
 
-        $request->expects($this->once())
-                ->method('getContent')
-                ->willReturn(<<<'JSON'
+        $this->request->expects($this->once())
+                      ->method('getContent')
+                      ->willReturn(<<<'JSON'
 {
     "test": {
         "hello": "world"
     }
 }
 JSON
-                );
+                      );
 
-        $event = new GetResponseEvent($this->kernel, $request, HttpKernelInterface::MASTER_REQUEST);
+        $event = new GetResponseEvent($this->kernel, $this->request, HttpKernelInterface::MASTER_REQUEST);
         $this->dispatcher->dispatch(KernelEvents::REQUEST, $event);
 
         $expectedDecodedData = [
@@ -155,7 +145,7 @@ JSON
             ]
         ];
 
-        $this->assertEquals($expectedDecodedData, $request->request->all());
+        $this->assertEquals($expectedDecodedData, $this->request->request->all());
     }
 
     protected function addEventListener()
