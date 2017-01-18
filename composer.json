@@ -40,16 +40,12 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Fresh\\CommonApiBundle\\": "Tests/"
+            "Fresh\\CommonApiBundle\\Tests\\": "Tests/"
         }
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.x-dev"
         }
-    },
-    "suggest": {
-        "ftrrtf/rollbar-bundle": "Allows to log exceptions and message to the Rollbar service",
-        "sentry/sentry-symfony": "Allows to log exceptions and message to the Sentry service"
     }
 }
