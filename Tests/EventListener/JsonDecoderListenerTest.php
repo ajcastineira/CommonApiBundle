@@ -26,19 +26,13 @@ use Symfony\Component\HttpKernel\KernelEvents;
  */
 class JsonDecoderListenerTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var EventDispatcherInterface $dispatcher Dispatcher
-     */
+    /** @var EventDispatcherInterface */
     private $dispatcher;
 
-    /**
-     * @var HttpKernelInterface|\PHPUnit_Framework_MockObject_MockObject $kernel kernel
-     */
+    /** @var HttpKernelInterface|\PHPUnit_Framework_MockObject_MockObject */
     private $kernel;
 
-    /**
-     * @var Request|\PHPUnit_Framework_MockObject_MockObject
-     */
+    /** @var Request|\PHPUnit_Framework_MockObject_MockObject */
     private $request;
 
     /**

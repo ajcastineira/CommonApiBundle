@@ -32,8 +32,8 @@ trait SentryHelperTrait
     }
 
     /**
-     * @param string $message Message
-     * @param string $level   Level
+     * @param string $message
+     * @param string $level
      */
     protected function sendMessageToSentry($message, $level)
     {

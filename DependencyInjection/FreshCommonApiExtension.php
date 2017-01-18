@@ -44,12 +44,4 @@ class FreshCommonApiExtension extends Extension
             $container->setDefinition('fresh_common_api.listener.json_decoder', $definition);
         }
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAlias()
-    {
-        return 'fresh_common_api';
-    }
 }

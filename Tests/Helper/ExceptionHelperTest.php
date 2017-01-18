@@ -17,9 +17,7 @@ namespace Fresh\CommonApiBundle\Tests\Helper;
  */
 class ExceptionHelperTest extends \PHPUnit_Framework_TestCase
 {
-    /**
-     * @var StubClass $stubClass
-     */
+    /** @var StubClass */
     private $stubClass;
 
     protected function setUp()

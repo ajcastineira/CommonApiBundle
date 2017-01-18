@@ -22,12 +22,8 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 trait ExceptionHelperTrait
 {
     /**
-     * Returns a BadRequestHttpException.
-     *
-     * This will result in a 400 response code.
-     *
-     * @param string          $message  A message
-     * @param \Exception|null $previous The previous exception
+     * @param string          $message
+     * @param \Exception|null $previous
      *
      * @return BadRequestHttpException
      */
@@ -37,12 +33,8 @@ trait ExceptionHelperTrait
     }
 
     /**
-     * Returns a UnauthorizedHttpException.
-     *
-     * This will result in a 401 response code.
-     *
-     * @param string          $message  A message
-     * @param \Exception|null $previous The previous exception
+     * @param string          $message
+     * @param \Exception|null $previous
      *
      * @return UnauthorizedHttpException
      */
@@ -52,12 +44,8 @@ trait ExceptionHelperTrait
     }
 
     /**
-     * Returns a ServerInternalErrorException.
-     *
-     * This will result in a 500 response code.
-     *
-     * @param string          $message  A message
-     * @param \Exception|null $previous The previous exception
+     * @param string          $message
+     * @param \Exception|null $previous
      *
      * @return ServerInternalErrorException
      */

@@ -28,9 +28,7 @@ class JsonDecoderListener
     ];
 
     /**
-     * On kernel request.
-     *
-     * @param GetResponseEvent $event Event
+     * @param GetResponseEvent $event
      */
     public function onKernelRequest(GetResponseEvent $event)
     {

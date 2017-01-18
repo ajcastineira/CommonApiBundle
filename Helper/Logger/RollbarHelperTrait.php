@@ -32,8 +32,8 @@ trait RollbarHelperTrait
     }
 
     /**
-     * @param string $message Message
-     * @param string $level   Level
+     * @param string $message
+     * @param string $level
      */
     protected function sendMessageToRollbar($message, $level)
     {
